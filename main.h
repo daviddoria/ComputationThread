@@ -20,9 +20,13 @@ public slots:
     void on_btnStop_clicked();
     void on_btnCompute_clicked();
     void on_btnStep_clicked();
+
+    void StartProgressBar();
+    void StopProgressBar();
+    
 protected:
   MyObject* Object;
-  TestComputationThreadClass<MyObject> TestComputationThread;
+  TestComputationThreadClass TestComputationThread;
 };
 
 #endif

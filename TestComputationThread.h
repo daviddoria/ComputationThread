@@ -7,8 +7,7 @@
 
 // This class is named 'TestComputationThreadClass' instead of just 'TestComputationThread'
 // because we often want to name a member variable 'ComputationThread'
-template<typename TObject>
-class TestComputationThreadClass : public ComputationThreadClass<TObject>
+class TestComputationThreadClass : public ComputationThreadClass
 {
 Q_OBJECT
 

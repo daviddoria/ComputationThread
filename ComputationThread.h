@@ -3,9 +3,10 @@
 
 #include <QThread>
 
+#include "ComputationObject.h"
+
 // This class is named 'ComputationThreadClass' instead of just 'ComputationThread'
 // because we often want to name a member variable 'ComputationThread'
-template <typename TObject>
 class ComputationThreadClass : public QThread
 {
 Q_OBJECT
@@ -41,11 +42,11 @@ public:
   void StopComputation();
 
   // Provide the object with which to do the computation.
-  void SetObject(TObject*);
+  void SetObject(ComputationObject*);
   
-private:
+protected:
   // We need a pointer to this object so we can perform the computations in this thread
-  TObject* Object;
+  ComputationObject* Object;
   
   // This flag can be set from another thread (by calling StopInpainting()) to indicate that we want to stop the computation at the next possible opportunity.
   bool Stop;

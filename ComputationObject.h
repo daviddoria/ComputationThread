@@ -3,6 +3,7 @@
 
 class ComputationObject
 {
+public:
   virtual void Step() = 0;
 };
 

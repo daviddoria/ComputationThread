@@ -1,7 +1,9 @@
 #ifndef MYOBJECT_H
 #define MYOBJECT_H
 
-class MyObject
+#include "ComputationObject.h"
+
+class MyObject : public ComputationObject
 {
   void Step();
 };

@@ -1,19 +1,16 @@
 #include "ComputationThread.h"
 
-template <typename TObject>
-ComputationThreadClass<TObject>::ComputationThreadClass() : Operation(ALLSTEPS), Stop(false)
+ComputationThreadClass::ComputationThreadClass() : Operation(ALLSTEPS), Stop(false)
 {
 
 }
 
-template <typename TObject>
-void ComputationThreadClass<TObject>::StopComputation()
+void ComputationThreadClass::StopComputation()
 {
   this->Stop = true;
 }
 
-template <typename TObject>
-void ComputationThreadClass<TObject>::run()
+void ComputationThreadClass::run()
 {
   if(this->Operation == ALLSTEPS)
     {
@@ -25,15 +22,13 @@ void ComputationThreadClass<TObject>::run()
     }
 }
 
-template <typename TObject>
-void ComputationThreadClass<TObject>::exit()
+void ComputationThreadClass::exit()
 {
   // When the thread is stopped, emit the signal to stop the marquee progress bar
   emit StopProgressBarSignal();
 }
 
-template <typename TObject>
-void ComputationThreadClass<TObject>::SetObject(TObject* object)
+void ComputationThreadClass::SetObject(ComputationObject* object)
 {
   this->Object = object;
 }

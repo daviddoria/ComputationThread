@@ -1,13 +1,11 @@
 #include "TestComputationThread.h"
 
-template<typename TObject>
-TestComputationThreadClass<TObject>::TestComputationThreadClass() : ComputationThreadClass<TObject>()
+TestComputationThreadClass::TestComputationThreadClass() : ComputationThreadClass()
 {
 
 }
 
-template<typename TObject>
-void ComputationThreadClass<TObject>::AllSteps()
+void TestComputationThreadClass::AllSteps()
 {
   emit StartProgressBarSignal();
 
@@ -24,8 +22,7 @@ void ComputationThreadClass<TObject>::AllSteps()
   exit();
 }
 
-template<typename TObject>
-void ComputationThreadClass<TObject>::SingleStep()
+void TestComputationThreadClass::SingleStep()
 {
   //std::cout << "ProgressThread::run()" << std::endl;
   // When the thread is started, emit the signal to start the marquee progress bar
